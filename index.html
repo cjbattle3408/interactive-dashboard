@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Dashboard</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <header>
+    <h1>Interactive Dashboard</h1>
+  </header>
+
+  <main>
+    <div class="row">
+      <div class="col">
+        <h2>Dashboard</h2>
+        <p>Use this dashboard to organize and track your weekly tasks.</p>
+      </div>
+
+      <div class="col" id="weekly-tasks">
+        <h2>Weekly Task Goal Calculator</h2>
+
+        <form id="goal-form">
+          <label for="user-name">Name:</label>
+          <input
+            type="text"
+            id="user-name"
+            name="user-name"
+            placeholder="Enter your name"
+            required
+          >
+
+          <label for="daily-goal">Daily Task Goal:</label>
+          <input
+            type="number"
+            id="daily-goal"
+            name="daily-goal"
+            placeholder="Enter daily goal"
+            min="0"
+            required
+          >
+
+          <label for="bonus-tasks">Weekly Bonus Tasks:</label>
+          <input
+            type="number"
+            id="bonus-tasks"
+            name="bonus-tasks"
+            placeholder="Enter bonus tasks"
+            min="0"
+            required
+          >
+
+          <button id="goal-btn" type="submit">Calculate Weekly Goal</button>
+        </form>
+
+        <p id="goal-message"></p>
+
+        <script src="js/task-manager.js"></script>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>Interactive Dashboard</p>
+  </footer>
+</body>
+</html>
