@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Dashboard</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <header>
+    <h1>Interactive Dashboard</h1>
+  </header>
+
+  <main>
+    <div class="row">
+      <div class="col">
+        <h2>Dashboard</h2>
+        <p>Use this dashboard to organize and track your weekly tasks.</p>
+      </div>
+
+      <div class="col" id="weekly-tasks">
+        <h2>Weekly Task Goal Calculator</h2>
+
+        <form id="goal-form">
+          <label for="user-name">Name:</label>
+          <input
+            type="text"
+            id="user-name"
+            name="user-name"
+            placeholder="Enter your name"
+            required
+          >
+
+          <label for="daily-goal">Daily Task Goal:</label>
+          <input
+            type="number"
+            id="daily-goal"
+            name="daily-goal"
+            placeholder="Enter daily goal"
+            min="0"
+            required
+          >
+
+          <label for="bonus-tasks">Weekly Bonus Tasks:</label>
+          <input
+            type="number"
+            id="bonus-tasks"
+            name="bonus-tasks"
+            placeholder="Enter bonus tasks"
+            min="0"
+            required
+          >
+
+          <button id="goal-btn" type="submit">Calculate Weekly Goal</button>
+        </form>
+
+        <p id="goal-message"></p>
+
+        <script src="js/task-manager.js" defer></script>
+      </div>
+
+      <div class="col" id="metric-converter">
+        <h2>Imperial/Metric Converter</h2>
+
+        <form id="converter-form">
+          <label for="input-value">Enter a value:</label>
+          <input
+            type="number"
+            id="input-value"
+            name="input-value"
+            placeholder="Enter a number"
+            step="any"
+            required
+          >
+
+          <label for="conversion-type">Choose a conversion:</label>
+          <select id="conversion-type" name="conversion-type">
+            <option value="inchesToCentimeters">
+              Inches to Centimeters
+            </option>
+            <option value="centimetersToInches">
+              Centimeters to Inches
+            </option>
+            <option value="feetToMeters">
+              Feet to Meters
+            </option>
+            <option value="metersToFeet">
+              Meters to Feet
+            </option>
+            <option value="yardsToMeters">
+              Yards to Meters
+            </option>
+            <option value="metersToYards">
+              Meters to Yards
+            </option>
+            <option value="milesToKilometers">
+              Miles to Kilometers
+            </option>
+            <option value="kilometersToMiles">
+              Kilometers to Miles
+            </option>
+          </select>
+
+          <button id="convert-button" type="submit">Convert</button>
+        </form>
+
+        <p id="conversion-result"></p>
+
+        <script src="js/metric-converter.js" defer></script>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>Interactive Dashboard</p>
+  </footer>
+</body>
+</html>
