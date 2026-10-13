@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Interactive Dashboard</title>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/magic-eight-ball.css">
 </head>
 
 <body>
@@ -57,6 +58,25 @@
 
         <p id="goal-message"></p>
 
+development
+        <div id="task-list">
+          <h3>Weekly Task List</h3>
+          <p>Enter a task below to manage your goals.</p>
+
+          <form>
+            <label for="task-name">Enter task:</label>
+            <input
+              type="text"
+              id="task-name"
+              name="task-name"
+              placeholder="Enter a task"
+            >
+
+            <button type="button" id="add-task">Add Task</button>
+          </form>
+        </div>
+
+      
         <script src="js/task-manager.js"></script>
       </div>
     </div>
@@ -144,6 +164,7 @@
         <p id="goal-message"></p>
 
         <script src="js/task-manager.js" defer></script>
+        main
       </div>
 
       <div class="col" id="metric-converter">
@@ -192,8 +213,31 @@
         </form>
 
         <p id="conversion-result"></p>
+      </div>
 
-        <script src="js/metric-converter.js" defer></script>
+      <div class="col" id="magic-eight-ball">
+        <h2>Magic Eight Ball</h2>
+
+        <form id="eight-ball-form">
+          <label for="question">Ask a question:</label>
+          <input
+            type="text"
+            id="question"
+            name="question"
+            placeholder="Ask a yes/no question"
+          >
+
+          <img
+            id="ball"
+            src="img/magic-eight-ball.png"
+            alt="Magic Eight Ball"
+          >
+
+          <div id="circle"></div>
+
+          <button type="button" id="reset">Ask another question</button>
+          <button type="button" id="addResponse">Add New Response</button>
+        </form>
       </div>
     </div>
   </main>
@@ -201,5 +245,9 @@
   <footer>
     <p>Interactive Dashboard</p>
   </footer>
+
+  <script src="js/task-manager.js" defer></script>
+  <script src="js/metric-converter.js" defer></script>
+  <script src="js/magic-eight-ball.js" defer></script>
 </body>
 </html>
