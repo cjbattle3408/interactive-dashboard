@@ -1,49 +1,34 @@
-# Interactive Productivity Dashboard
-This project is a web-based dashboard built for WEB-115 to demonstrate interactive JavaScript features.
-## TODO: Future Enhancements
-- [ ] Add a metric conversion tool
-- [ ] Integrate a task list with array storage
-- [ ] Add JavaScript logic for a live clock
-## Imperial/Metric Converter
+# Interactive Dashboard
 
-This dashboard includes an Imperial/Metric Converter that lets users convert between common Imperial and metric length units. Users can enter a numeric value and select a conversion type for inches, feet, yards, miles, centimeters, meters, and kilometers. The converter displays the converted value along with the original and resulting units.
+This project is an interactive dashboard built with HTML, CSS, and JavaScript.
 
-### Logic and Pseudocode
+## Features
 
-START
+### Weekly Task Goal Calculator
+Calculates a user’s weekly task goal based on their daily goal and weekly bonus tasks.
 
-GET the numeric value entered by the user
+### Imperial/Metric Converter
+Converts between common Imperial and metric units of length.
 
-GET the selected conversion type
+### Magic Eight Ball
+Provides a random answer when the user asks a question and clicks the Magic Eight Ball.
 
-CONVERT the entered value into a number
+### Weekly Task List
+Allows users to add tasks to a dynamically generated task list using JavaScript DOM manipulation.
 
-IF the entered value is not a valid number
-    DISPLAY "Please enter a valid number."
-ELSE IF the conversion type is inches to centimeters
-    MULTIPLY the value by 2.54
-    DISPLAY the value in centimeters
-ELSE IF the conversion type is centimeters to inches
-    DIVIDE the value by 2.54
-    DISPLAY the value in inches
-ELSE IF the conversion type is feet to meters
-    MULTIPLY the value by 0.3048
-    DISPLAY the value in meters
-ELSE IF the conversion type is meters to feet
-    DIVIDE the value by 0.3048
-    DISPLAY the value in feet
-ELSE IF the conversion type is yards to meters
-    MULTIPLY the value by 0.9144
-    DISPLAY the value in meters
-ELSE IF the conversion type is meters to yards
-    DIVIDE the value by 0.9144
-    DISPLAY the value in yards
-ELSE IF the conversion type is miles to kilometers
-    MULTIPLY the value by 1.609344
-    DISPLAY the value in kilometers
-ELSE IF the conversion type is kilometers to miles
-    DIVIDE the value by 1.609344
-    DISPLAY the value in miles
-END IF
+## Technologies Used
 
-END
+- HTML
+- CSS
+- JavaScript
+- Git
+- GitHub
+- GitHub Pages
+
+## How to Use
+
+1. Open the deployed GitHub Pages site.
+2. Use the Weekly Task Goal Calculator to calculate a weekly goal.
+3. Use the Imperial/Metric Converter to convert between units.
+4. Ask the Magic Eight Ball a question and click the ball for an answer.
+5. Enter a task in the Weekly Task List and click **Add Task** to add it to the list.

@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Interactive Dashboard</title>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/magic-eight-ball.css">
 </head>
 
 <body>
@@ -57,77 +58,22 @@
 
         <p id="goal-message"></p>
 
-        <script src="js/task-manager.js"></script>
-      </div>
-    </div>
-  </main>
+        <div id="task-list">
+          <h3>Weekly Task List</h3>
+          <p>Enter a task below to manage your goals.</p>
 
-  <footer>
-    <p>Interactive Dashboard</p>
-  </footer>
-</body>
-</html>
+          <form>
+            <label for="task-name">Enter task:</label>
+            <input
+              type="text"
+              id="task-name"
+              name="task-name"
+              placeholder="Enter a task"
+            >
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Interactive Dashboard</title>
-  <link rel="stylesheet" href="css/style.css">
-</head>
-
-<body>
-  <header>
-    <h1>Interactive Dashboard</h1>
-  </header>
-
-  <main>
-    <div class="row">
-      <div class="col">
-        <h2>Dashboard</h2>
-        <p>Use this dashboard to organize and track your weekly tasks.</p>
-      </div>
-
-      <div class="col" id="weekly-tasks">
-        <h2>Weekly Task Goal Calculator</h2>
-
-        <form id="goal-form">
-          <label for="user-name">Name:</label>
-          <input
-            type="text"
-            id="user-name"
-            name="user-name"
-            placeholder="Enter your name"
-            required
-          >
-
-          <label for="daily-goal">Daily Task Goal:</label>
-          <input
-            type="number"
-            id="daily-goal"
-            name="daily-goal"
-            placeholder="Enter daily goal"
-            min="0"
-            required
-          >
-
-          <label for="bonus-tasks">Weekly Bonus Tasks:</label>
-          <input
-            type="number"
-            id="bonus-tasks"
-            name="bonus-tasks"
-            placeholder="Enter bonus tasks"
-            min="0"
-            required
-          >
-
-          <button id="goal-btn" type="submit">Calculate Weekly Goal</button>
-        </form>
-
-        <p id="goal-message"></p>
-
-        <script src="js/task-manager.js" defer></script>
+            <button type="button" id="add-task">Add Task</button>
+          </form>
+        </div>
       </div>
 
       <div class="col" id="metric-converter">
@@ -176,8 +122,31 @@
         </form>
 
         <p id="conversion-result"></p>
+      </div>
 
-        <script src="js/metric-converter.js" defer></script>
+      <div class="col" id="magic-eight-ball">
+        <h2>Magic Eight Ball</h2>
+
+        <form id="eight-ball-form">
+          <label for="question">Ask a question:</label>
+          <input
+            type="text"
+            id="question"
+            name="question"
+            placeholder="Ask a yes/no question"
+          >
+
+          <img
+            id="ball"
+            src="img/magic-eight-ball.png"
+            alt="Magic Eight Ball"
+          >
+
+          <div id="circle"></div>
+
+          <button type="button" id="reset">Ask another question</button>
+          <button type="button" id="addResponse">Add New Response</button>
+        </form>
       </div>
     </div>
   </main>
@@ -185,5 +154,9 @@
   <footer>
     <p>Interactive Dashboard</p>
   </footer>
+
+  <script src="js/task-manager.js" defer></script>
+  <script src="js/metric-converter.js" defer></script>
+  <script src="js/magic-eight-ball.js" defer></script>
 </body>
 </html>
