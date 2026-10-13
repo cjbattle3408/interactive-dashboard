@@ -58,6 +58,7 @@
 
         <p id="goal-message"></p>
 
+development
         <div id="task-list">
           <h3>Weekly Task List</h3>
           <p>Enter a task below to manage your goals.</p>
@@ -74,6 +75,96 @@
             <button type="button" id="add-task">Add Task</button>
           </form>
         </div>
+
+      
+        <script src="js/task-manager.js"></script>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>Interactive Dashboard</p>
+  </footer>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Dashboard</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <header>
+    <h1>Interactive Dashboard</h1>
+  </header>
+
+  <main>
+    <div class="row">
+     <div class="col" id="magic-eight-ball">
+    <script src="js/magic-eight-ball.js" defer></script>
+    <link rel="stylesheet" href="css/magic-eight-ball.css">
+    <h2 class="heading">Magic Eight Ball</h2>
+    <form>
+      <p>Type a yes/no question below, then click on the Eight Ball below to get your answer!</p>
+      <input id="question" name="question" size="80">
+      <div id="magicEightBall">
+       <div id="circle"></div>
+       <img id="ball" src="img/magic-eight-ball.png"/>
+      </div>
+      <button id="reset" name="reset" type="reset">Ask another question</button>
+      <button id="addAnswer" name="addAnswer" type="button" onclick="addAnswer()">Add a new response</button>
+    </form>
+    <br>
+</div> 
+      <div class="col">
+        <h2>Dashboard</h2>
+        <p>Use this dashboard to organize and track your weekly tasks.</p>
+      </div>
+
+      <div class="col" id="weekly-tasks">
+        <h2>Weekly Task Goal Calculator</h2>
+
+        <form id="goal-form">
+          <label for="user-name">Name:</label>
+          <input
+            type="text"
+            id="user-name"
+            name="user-name"
+            placeholder="Enter your name"
+            required
+          >
+
+          <label for="daily-goal">Daily Task Goal:</label>
+          <input
+            type="number"
+            id="daily-goal"
+            name="daily-goal"
+            placeholder="Enter daily goal"
+            min="0"
+            required
+          >
+
+          <label for="bonus-tasks">Weekly Bonus Tasks:</label>
+          <input
+            type="number"
+            id="bonus-tasks"
+            name="bonus-tasks"
+            placeholder="Enter bonus tasks"
+            min="0"
+            required
+          >
+
+          <button id="goal-btn" type="submit">Calculate Weekly Goal</button>
+        </form>
+
+        <p id="goal-message"></p>
+
+        <script src="js/task-manager.js" defer></script>
+        main
       </div>
 
       <div class="col" id="metric-converter">
