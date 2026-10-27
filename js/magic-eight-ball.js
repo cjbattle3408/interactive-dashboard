@@ -1,34 +1,62 @@
 let answers = [
-    "It is certain",
-    "Without a doubt",
-    "Reply hazy, try again",
-    "Cannot predict now",
-    "Don't count on it",
-    "My sources say no",
-    "Outlook not so good",
-    "Signs point to yes"
+  "Seems unlikely.",
+  "Not a chance.",
+  "Ask again later.",
+  "Signs point to yes.",
+  "No.",
+  "Yes.",
+  "Nope."
 ];
+
+const question = document.getElementById("question");
+const ball = document.getElementById("ball");
+const circle = document.getElementById("circle");
+const eightBallForm = document.getElementById("eight-ball-form");
+const addResponse = document.getElementById("addResponse");
+
+function askQuestion() {
+  if (question.value.trim() === "") {
+    alert("Please enter a question!");
+    question.focus();
+    return;
+  }
+
+  displayAnswer();
+}
+
 function displayAnswer() {
-    let index = Math.floor(Math.random() * answers.length);
-    let circle = document.getElementById("circle");
-    circle.style.display = "block";
-    circle.innerHTML = answers[index];
+  const index = Math.floor(Math.random() * answers.length);
+
+  circle.textContent = answers[index];
+  circle.style.display = "flex";
 }
-document.getElementById("ball").addEventListener("mousedown", function() {
-    let question = document.getElementById("question").value;
-    if (question.trim() === "") {
-        alert("Please enter a question first!");
-    } else {
-        displayAnswer();
-    }
+
+ball.addEventListener("mousedown", askQuestion);
+
+ball.addEventListener("keydown", function (event) {
+  if (event.key === "Enter" || event.key === " ") {
+    event.preventDefault();
+    askQuestion();
+  }
 });
-document.getElementById("reset").addEventListener("click", function() {
-    document.getElementById("circle").style.display = "none";
+
+eightBallForm.addEventListener("submit", function (event) {
+  event.preventDefault();
+  askQuestion();
 });
-function addAnswer() {
-    let newAnswer = prompt("Enter a new Magic Eight Ball response:");
-    if (newAnswer !== null && newAnswer.trim() !== "") {
-        answers.push(newAnswer.trim());
-        alert("New response added! There are now " + answers.length + " possible answers.");
-    }
-}
+
+eightBallForm.addEventListener("reset", function () {
+  circle.style.display = "none";
+  circle.textContent = "";
+});
+
+addResponse.addEventListener("click", function () {
+  const newResponse = prompt("Enter a new 8-ball response:");
+
+  if (newResponse && newResponse.trim() !== "") {
+    answers.push(newResponse.trim());
+
+    console.log("New response added: " + newResponse.trim());
+    console.log("There is a total of: " + answers.length + " responses.");
+  }
+});

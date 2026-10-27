@@ -1,40 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>JavaScript Debugging Exercise</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Debugging Exercise</title>
 </head>
-<body>
-    <h1>Dashboard Status</h1>
-    <div id="display"></div>
- 
-    <script>
-        // Weekly Goal: Calculate the total weekly task goal for a user.
-        
-        // Declare variables and values
-        let userName = "Jane Doe";
-        let dailyGoal = 5; 
-        let bonusTasks = "10"; // FIXED: Changed from string to number for proper calculation.
- 
-        // Output message to console
-        // FIXED: Added missing parenthesis to console.log.
-        console.log("Checking status for: " + userName); 
- 
-        // Calculate weekly goal based on number of workdays (5) per week
-        // FIXED: spelling error in variable name (dailyGoal instead of dailygoal).
-        // FIXED: Changed the multiplier from 15 to 5 because there are 5 workdays.
 
-        let weeklyGoal = dailyGoal * 5; 
- 
-        // Add bonusTasks to weeklyGoal. 
-        // Note: Check for data type issues
-        // FIXED: Used addition so bonus tasks are added to the weekly goal.
-        let totalGoal = weeklyGoal + bonusTasks;
- 
-        // Output results to web page
-        document.write("User: " + userName + "<br>");
-        document.write("Total Weekly Goal: " + totalGoal);
- 
-    </script>
+<body>
+  <h1>Dashboard Status</h1>
+  <div id="display"></div>
+
+  <script>
+    // Weekly Goal: Calculate the total weekly task goal for a user.
+
+    let userName = "Jane Doe";
+    let dailyGoal = 5;
+
+    // FIXED: Use a number instead of a string.
+    let bonusTasks = 2;
+
+    // FIXED: Added the missing closing parenthesis.
+    console.log("Checking status for: " + userName);
+
+    // FIXED: Corrected the variable name and used five workdays.
+    let weeklyGoal = dailyGoal * 5;
+
+    // FIXED: Add bonus tasks to the weekly goal.
+    let totalGoal = weeklyGoal + bonusTasks;
+
+    // Display the results using DOM nodes.
+    const display = document.getElementById("display");
+
+    const userMessage = document.createElement("p");
+    userMessage.textContent = "User: " + userName;
+
+    const totalMessage = document.createElement("p");
+    totalMessage.textContent = "Total Weekly Goal: " + totalGoal;
+
+    display.appendChild(userMessage);
+    display.appendChild(totalMessage);
+  </script>
 </body>
 </html>

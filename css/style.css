@@ -1,0 +1,216 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: #eef2f7;
+  color: #1f2937;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+}
+
+header {
+  padding: 2rem 1rem;
+  background-color: #172554;
+  color: white;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0 0 0.5rem;
+}
+
+header p {
+  margin: 0;
+}
+
+main {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.col {
+  min-width: 0;
+  padding: 1.5rem;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgb(0 0 0 / 8%);
+}
+
+h2,
+h3 {
+  margin-top: 0;
+}
+
+form {
+  display: grid;
+  gap: 0.75rem;
+}
+
+label {
+  font-weight: 600;
+}
+
+input,
+select,
+button {
+  font: inherit;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+  width: 100%;
+  min-width: 0;
+  padding: 0.7rem;
+  border: 1px solid #9ca3af;
+  border-radius: 6px;
+  background-color: white;
+  color: #111827;
+}
+
+button {
+  padding: 0.7rem 1rem;
+  border: none;
+  border-radius: 6px;
+  background-color: #1d4ed8;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #1e40af;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+#ball:focus-visible {
+  outline: 3px solid #2563eb;
+  outline-offset: 3px;
+}
+
+footer {
+  padding: 1rem;
+  text-align: center;
+  color: #475569;
+}
+
+#goal-message,
+#conversion-result {
+  overflow-wrap: anywhere;
+}
+
+#task-list {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 2px solid #d1d5db;
+}
+
+.checkbox-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 400;
+}
+
+.checkbox-label input[type="checkbox"] {
+  width: auto;
+  margin: 0;
+}
+
+.task-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.danger-button {
+  background-color: #b91c1c;
+}
+
+.danger-button:hover {
+  background-color: #991b1b;
+}
+
+#user-tasks {
+  margin: 1rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.task-item {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border: 1px solid #d1d5db;
+  border-left-width: 6px;
+  border-radius: 8px;
+}
+
+.task-name {
+  display: block;
+  font-size: 1.1rem;
+  overflow-wrap: anywhere;
+}
+
+.task-details {
+  margin: 0.5rem 0 1rem;
+  color: #374151;
+  font-size: 0.9rem;
+}
+
+.priority-control {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 400;
+}
+
+.priority-control select {
+  width: auto;
+}
+
+#task-status {
+  min-height: 1.5em;
+  color: #374151;
+}
+
+@media (max-width: 800px) {
+  .row {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  main {
+    padding: 0.75rem;
+  }
+
+  .col {
+    padding: 1rem;
+  }
+
+  .task-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .task-actions button {
+    width: 100%;
+  }
+}
